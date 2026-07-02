@@ -37,7 +37,7 @@ O Order Manager nasceu como um projeto de estudo aprofundado de **Domain-Driven 
 
 O projeto está na fase de construção do **núcleo de domínio do módulo de Vendas**, com foco em solidificar a arquitetura antes de expandir. Atualmente temos:
 
-- [] Módulo de Ventas
+- [ ] Módulo de Ventas
     - [x] Entidades de Domínio (`Order`, `OrderItem`) com regras de negócio encapsuladas
     - [x] Value Objects (`OrderStatus`, `UnitOfType`)
     - [x] Portas de saída (Interfaces de Repositório)
