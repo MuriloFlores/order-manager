@@ -1,0 +1,23 @@
+# IDE
+.idea/
+
+# Environment variables (contains secrets)
+.env
+
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go vendor (if used)
+vendor/
+
+# Docker volumes
+postgres_data/
+
+# Antigravity
+.agents/
