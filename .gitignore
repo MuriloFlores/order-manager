@@ -4,6 +4,9 @@
 # Environment variables (contains secrets)
 .env
 
+# AI Context (personal file, updated each session)
+CONTEXT.md
+
 # Go binaries
 *.exe
 *.exe~
