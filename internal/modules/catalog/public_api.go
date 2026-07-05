@@ -1,19 +1,21 @@
 package catalog
 
 import (
+	"context"
 	"errors"
 
 	"github.com/google/uuid"
 )
 
 type CatalogDTO struct {
-	ID    uuid.UUID
-	Name  string
-	Price float64
+	ID         uuid.UUID
+	Name       string
+	Price      float64
+	UnitOfType string
 }
 
 type CatalogService interface {
-	GetProductsData(ids []uuid.UUID) ([]CatalogDTO, error)
+	GetProductsData(ctx context.Context, ids []uuid.UUID) ([]CatalogDTO, error)
 }
 
 type FakeCatalogService struct {
@@ -28,7 +30,7 @@ func NewFakeCatalogService() *FakeCatalogService {
 	}
 }
 
-func (s *FakeCatalogService) GetProductsData(ids []uuid.UUID) ([]CatalogDTO, error) {
+func (s *FakeCatalogService) GetProductsData(ctx context.Context, ids []uuid.UUID) ([]CatalogDTO, error) {
 	if len(ids) == 0 {
 		return nil, errors.New("no ids provided to catalog")
 	}
@@ -36,9 +38,10 @@ func (s *FakeCatalogService) GetProductsData(ids []uuid.UUID) ([]CatalogDTO, err
 	var results []CatalogDTO
 	for _, id := range ids {
 		results = append(results, CatalogDTO{
-			ID:    id,
-			Name:  "Produto Dinâmico do Catálogo Falso",
-			Price: 25.50,
+			ID:         id,
+			Name:       "Produto Dinâmico do Catálogo Falso",
+			Price:      25.50,
+			UnitOfType: "UND",
 		})
 	}
 
